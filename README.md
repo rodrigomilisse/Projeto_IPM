@@ -1,3 +1,14 @@
+project/
+├── index.html
+├── about.html
+├── contact.html
+├── css/
+│   └── styles.css
+├── js/
+│   └── scripts.js
+└── images/
+	└── logo.png
+
 Tarefa 1: Verificar as condições em tempo real de um dos campos e ligar ou desligar uma rega.
 
 Tarefa 2: Agendar uma rega, posteriormente verificar quais as próximas regas agendadas.

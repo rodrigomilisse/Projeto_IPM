@@ -1,4 +1,10 @@
+:root {
+	--main-background: #48A6A7;
+	--nav-bar-color: #7D8C8C;
+}
+
 body {
+	background-color: var(--main-background);
 	font-family: -apple-system, "Helvetica Neue", sans-serif;
 	font-size: small;
 }
@@ -21,5 +27,10 @@ body {
 .charts canvas {
 	background-color: #D3D3D3;
 	border-radius: 8px;
+
+}
+
+footer.menu-inferior {
+	background-color: var(--nav-bar-color);
 
 }
