@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Relatórios - Rega+</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="position.css">
+	<link rel="stylesheet" href="colors.css">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="relatorio.js" defer></script>
+</head>
+
+<body onload="
+		desenharTemperatura();
+		desenharHumidade();
+		desenharChuva();
+		desenharVento();
+		desenharConsumo();
+	" id="relatorios_detalhados">
+
+	<nav>
+		<a href="main-page.html" class="back">←</a>
+	</nav>
+
+	<header>
+		<h1>Relatório</h1>
+	</header>
+
+	<main>
+		<h2>Temperatura</h2>
+		<div class="charts">
+			<canvas id="temperatureChart" width="400" height="200"></canvas>
+
+			<h2>Humidade</h2>
+			<canvas id="humidityChart" width="400" height="200"></canvas>
+
+			<h2>Chuva</h2>
+			<canvas id="rainChart" width="400" height="200"></canvas>
+
+			<h2>Vento</h2>
+			<canvas id="windChart" width="400" height="200"></canvas>
+
+			<h2>Consumo de Água</h2>
+			<canvas id="consumptionChart" width="400" height="200"></canvas>
+		</div>
+	</main>
+
+	<footer class="menu-inferior">
+		<div class="menu-item">
+			<a href="monitorizacao.html" title="Monitorização">🌡️
+				<span>Monitorização</span>
+			</a>
+		</div>
+		<div class="menu-item">
+			<a href="automatizacao.html" title="Automatização">🌧️
+				<span>Automatização</span>
+			</a>
+		</div>
+		<div class="menu-item">
+			<a href="relatorios.html" title="Relatórios">📊
+				<span>Relatórios</span>
+			</a>
+		</div>
+	</footer>
+</body>
+
+</html>

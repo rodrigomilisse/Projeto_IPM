@@ -1,0 +1,25 @@
+body {
+	font-family: -apple-system, "Helvetica Neue", sans-serif;
+	font-size: small;
+}
+
+.relatório {
+	background-color: #D3D3D3;
+	margin: 2%;
+}
+
+.relatórios li {
+	list-style: none;
+	border-radius: 8px;
+}
+
+.relatório a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.charts canvas {
+	background-color: #D3D3D3;
+	border-radius: 8px;
+
+}

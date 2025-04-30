@@ -1,0 +1,23 @@
+body {
+	padding-bottom: 300px;
+}
+
+#relatorios_detalhados {
+	padding-bottom: 800px;
+}
+
+.relatórios {
+	display: grid;
+}
+
+.relatório a {
+	display: flex;
+	align-items: start;
+	text-align: justify;
+	padding: 5%;
+	margin: 2%;
+}
+
+.relatório a p {
+	padding: 5%;
+}

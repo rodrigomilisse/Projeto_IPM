@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Monitorização em Tempo Real - Rega+</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="position.css">
+	<link rel="stylesheet" href="colors.css">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<a href="main-page.html" class="back">←</a>
+</head>
+
+<body class="monitorizacao">
+	<script src="behaviour.js"></script>
+	<header>
+		<h1>Monitorização em Tempo Real</h1>
+	</header>
+	<div class="monitorizacao-container">
+		<div>Seleciona a zona de rega:</div>
+		<select id="zona" name="zona" onchange="mudarValores()">
+			<option value="zona1">Estufa Norte</option>
+			<option value="zona2">Parque Sul</option>
+			<option value="zona3">Campo Verde</option>
+			<option value="zona4">Plantação de Milho</option>
+		</select>
+		<div>Estado da rega:
+			<button id="status" onclick="ativarRega()">Desativado</button>
+		</div>
+		<h2>Status do Sistema</h2>
+		<div class="dados">
+			<div class="dado">
+				<span class="label">Humidade do Solo:</span>
+				<span class="valor" id="humidade">60%</span>
+			</div>
+			<div class="dado">
+				<span class="label">Temperatura:</span>
+				<span class="valor" id="temperatura">22°C</span>
+			</div>
+			<div class="dado">
+				<span class="label">Luminosidade</span>
+				<span class="valor" id="luminosidade">Média</span>
+			</div>
+			<div class="dado">
+				<span class="label">Nível da Bateria:</span>
+				<span class="valor" id="nivel-bateria">85%</span>
+			</div>
+			<span class="label">Agendar próxima rega::</span><br>
+			<input type="datetime-local" id="dataRega" name="dataRega">
+			<button id="next-rega-btn" onclick="agendarRega()">Agendar Rega</button>
+		</div>
+	</div>
+	<footer class="menu-inferior">
+		<div class="menu-item">
+			<a href="monitorizacao.html" title="Monitorização">🌡️
+				<span>Monitorização</span>
+			</a>
+		</div>
+		<div class="menu-item">
+			<a href="automatizacao.html" title="Automatização">🌧️
+				<span>Automatização</span>
+			</a>
+		</div>
+		<div class="menu-item">
+			<a href="relatorios.html" title="Relatórios">📊
+				<span>Relatórios</span>
+			</a>
+		</div>
+	</footer>
+</body>
+
+
+</html>
