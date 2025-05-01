@@ -1,5 +1,21 @@
 body {
-	padding-bottom: 300px;
+	margin: 8vh 10vw;
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+
+	text-align: center;
+	display: flex-start;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+h1 {
+	font-size: 2.5rem;
+	text-align: center;
+	padding-top: 20px;
+	margin-bottom: 0;
 }
 
 #relatorios_detalhados {
@@ -14,8 +30,7 @@ body {
 	display: flex;
 	align-items: start;
 	text-align: justify;
-	padding: 5%;
-	margin: 2%;
+	flex-direction: column;
 }
 
 .relatório a p {

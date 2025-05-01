@@ -1,12 +1,21 @@
 :root {
 	--main-background: #48A6A7;
 	--nav-bar-color: #7D8C8C;
+	--highlight-color: green;
 }
 
 body {
 	background-color: var(--main-background);
 	font-family: -apple-system, "Helvetica Neue", sans-serif;
 	font-size: small;
+}
+
+svg {
+	fill: white;
+}
+
+.selected {
+	fill: var(--highlight-color);
 }
 
 .relatório {
