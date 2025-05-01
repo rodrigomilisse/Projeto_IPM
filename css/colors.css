@@ -2,12 +2,26 @@
 	--main-background: #48A6A7;
 	--nav-bar-color: #7D8C8C;
 	--highlight-color: green;
+	--menu-color: #D3D3D3;
 }
 
 body {
 	background-color: var(--main-background);
 	font-family: -apple-system, "Helvetica Neue", sans-serif;
 	font-size: small;
+}
+
+footer.menu-inferior {
+	border-top: 2px solid #A1DD70;
+}
+
+.monitorizacao-container,
+.automatizacao-container,
+.type-cond-container,
+.size-cond-container,
+.report-container {
+	background-color: var(--menu-color);
+	border-radius: 8px;
 }
 
 svg {
@@ -18,28 +32,31 @@ svg {
 	fill: var(--highlight-color);
 }
 
+/**
 .relatório {
-	background-color: #D3D3D3;
+	background-color: var(--menu-color);
 	margin: 2%;
-}
+}*/
 
 .relatórios li {
 	list-style: none;
 	border-radius: 8px;
 }
 
-.relatório a {
+.report-container {
+	margin: 2%;
+}
+
+.report-container a {
 	text-decoration: none;
 	color: inherit;
 }
 
 .charts canvas {
-	background-color: #D3D3D3;
+	background-color: var(--menu-color);
 	border-radius: 8px;
-
 }
 
 footer.menu-inferior {
 	background-color: var(--nav-bar-color);
-
 }
