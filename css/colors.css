@@ -15,6 +15,7 @@ footer.menu-inferior {
 	border-top: 2px solid #A1DD70;
 }
 
+.regas-agendadas,
 .monitorizacao-container,
 .automatizacao-container,
 .type-cond-container,
@@ -22,6 +23,7 @@ footer.menu-inferior {
 .report-container {
 	background-color: var(--menu-color);
 	border-radius: 8px;
+	border: 2px solid black;
 }
 
 svg {

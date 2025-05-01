@@ -229,19 +229,8 @@ input[type="number"]::placeholder {
 	border: 2px solid black;
 	border-radius: 10px;
 	padding: 0px 20px;
-	width: 75%;
+	width: 85%;
 	margin: 20px auto 50px;
-}
-
-.regas-agendadas {
-	box-sizing: border-box;
-	background-color: #d3d3d3;
-	border: 2px solid black;
-	border-radius: 10px;
-	padding: 10px 5px;
-	height: 100%;
-	width: 100%;
-	margin: 20px auto;
 }
 
 .square-regas h2 {

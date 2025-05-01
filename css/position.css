@@ -5,7 +5,7 @@
 
 body {
 	min-width: var(--min-width);
-	margin: 8vh 10vw;
+	margin: 6vh 10vw;
 	padding-top: 0;
 	padding-left: 0;
 	padding-right: 0;
@@ -21,10 +21,28 @@ body {
 .automatizacao-container,
 .type-cond-container,
 .size-cond-container {
-	/*width: 90%;*/
+	width: 85%;
 	max-width: 500px;
 	/*margin: 20px auto;*/
 	padding: 5vw;
+
+}
+
+.regas-agendadas {
+	margin: 20px auto;
+}
+
+.report-container a {
+	display: flex;
+	align-items: start;
+	text-align: justify;
+	flex-direction: column;
+	width: 85%;
+
+}
+
+.report-container a p {
+	padding: 5%;
 }
 
 h1 {
@@ -40,6 +58,7 @@ h1 {
 
 .relatórios {
 	display: grid;
+	width: 85%;
 }
 
 footer.menu-inferior {
@@ -56,7 +75,6 @@ footer.menu-inferior {
 	/*min-width: var(--min-width);*/
 }
 
-
 footer.menu-inferior .menu-item a {
 	font-size: 6em;
 	text-decoration: none;
@@ -65,19 +83,6 @@ footer.menu-inferior .menu-item a {
 	padding: 5px 0;
 	text-align: center;
 }
-
-
-.report-container a {
-	display: flex;
-	align-items: start;
-	text-align: justify;
-	flex-direction: column;
-}
-
-.report-container a p {
-	padding: 5%;
-}
-
 
 svg {
 	max-width: 30vw;
