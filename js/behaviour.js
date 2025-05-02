@@ -66,28 +66,27 @@ function mudarValores() {
 function agendarRega() {
 	const dataRega = document.getElementById("dataRega").value;
 
-	// Se uma data foi selecionada
-	if (dataRega) {
-		// Exibir a data agendada
-		const zona = document.getElementById("zona").value;
-		const zonaTexto = document.querySelector(`#zona option[value="${zona}"]`).textContent;
-
-		const regaAgendada = {
-			data: dataRega,
-			zona: zonaTexto
-		};
-
-		const regas = JSON.parse(localStorage.getItem("regasAgendadas")) || [];
-
-		regas.push(regaAgendada);
-
-		localStorage.setItem("regasAgendadas", JSON.stringify(regas));
-
-
-		alert(`A rega para ${zonaTexto} foi agendada para  ${dataRega}`);
-	} else {
+	if (!dataRega) {
 		alert("Por favor, selecione uma data e hora para agendar a rega.");
+		return;
 	}
+	// Se uma data foi selecionada
+	// Exibir a data agendada
+	const zona = document.getElementById("zona").value;
+	const zonaTexto = document.querySelector(`#zona option[value="${zona}"]`).textContent;
+
+	const regaAgendada = {
+		data: dataRega,
+		zona: zonaTexto
+	};
+
+	const regas = JSON.parse(localStorage.getItem("regasAgendadas")) || [];
+
+	regas.push(regaAgendada);
+
+	localStorage.setItem("regasAgendadas", JSON.stringify(regas));
+
+	alert(`A rega para ${zonaTexto} foi agendada para  ${dataRega}`);
 }
 
 function confirmar() {
@@ -143,7 +142,6 @@ function confirmarCond() {
 	} else if (tipoCondicao === "hum") {
 		valor = document.getElementById("numeroHum").value;
 	}
-
 	if (!valor) {
 		alert("Por favor insira um valor válido no campo.");
 	} else {
