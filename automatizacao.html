@@ -9,17 +9,16 @@
 	<link rel="stylesheet" href="css/position.css">
 	<link rel="stylesheet" href="css/colors.css">
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<script src="js/automatizacao.js"></script>
 </head>
 
 <body class="automatizacao">
-	<script src="js/behaviour.js"></script>
 	<header>
-		<!--<a href="main-page.html" class="back">←</a>-->
 		<h1>Gestão de Rega Automática</h1>
 	</header>
 	<main>
 		<div class="automatizacao-container">
-			<select id="zona1" name="zona1" onchange="sincronizarDropdowns(this)">
+			<select id="zona" name="zona" onchange="renderConditions()">
 				<option value="zona1">Estufa Norte</option>
 				<option value="zona2">Parque Sul</option>
 				<option value="zona3">Campo Verde</option>
@@ -28,17 +27,11 @@
 			<br><br>
 			Ligar se:
 			<div class="ligar-container">
-				<a href="adicionar_condicao.html?acao=ligar">
-					<button id="add-cond">+</button>Adicionar Condição
-				</a>
+				<button onclick="adicionarCondicaoLigar()">Adicionar condição</button>
 			</div>
-			Desligar
-
-			se:
+			Desligar se:
 			<div class="desligar-container">
-				<a href="adicionar_condicao.html?acao=desligar">
-					<button id="add-cond">+</button>Adicionar condição
-				</a>
+				<button onclick="adicionarCondicaoDesligar()">Adicionar condição</button>
 			</div>
 			<div class="botoes-container">
 				<button id="confirmar" onclick="confirmar()">✔️Confirmar</button>
@@ -93,6 +86,7 @@
 			</a>
 		</div>
 	</footer>
+	<!--<script src="js/behaviour.js"></script>-->
 </body>
 
 

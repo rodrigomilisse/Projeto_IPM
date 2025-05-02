@@ -88,7 +88,7 @@ function agendarRega() {
 
 	alert(`A rega para ${zonaTexto} foi agendada para  ${dataRega}`);
 }
-
+/*
 function confirmar() {
 	const resposta = confirm("Tem a certeza que deseja confirmar esta automatização?");
 	if (resposta) {
@@ -97,7 +97,7 @@ function confirmar() {
 		alert("Automatização cancelada!");
 	}
 }
-
+*/
 function cancelar() {
 	alert("Automatização cancelada!");
 	window.location.href = "main-page.html";
@@ -121,81 +121,6 @@ function mudarTexto() {
 		luminosidadeContainer.style.display = "inline-block";
 	}
 }
-
-function cancelarCond() {
-	alert("Condição cancelada!");
-	window.location.href = "automatizacao.html";
-}
-
-function confirmarCond() {
-
-	const urlParams = new URLSearchParams(window.location.search);
-	const tipoAcao = urlParams.get("acao");
-
-	let valor;
-
-	const tipoCondicao = document.getElementById("type-cond").value;
-
-	const condicaoComparacao = document.getElementById("size-cond").value;
-	if (tipoCondicao === "temp") {
-		valor = document.getElementById("numeroTemp").value;
-	} else if (tipoCondicao === "hum") {
-		valor = document.getElementById("numeroHum").value;
-	}
-	if (!valor) {
-		alert("Por favor insira um valor válido no campo.");
-	} else {
-		let luminosidade = null;
-		if (tipoCondicao === "lum") {
-			luminosidade = document.getElementById("luminosidade").value;
-		}
-
-		const dadosCondicao = {
-			tipoAcao: tipoAcao,
-			tipoCondicao: tipoCondicao,
-			condicaoComparacao: condicaoComparacao,
-			valor: valor,
-			luminosidade: luminosidade
-		};
-
-		localStorage.setItem("dadosCondicao", JSON.stringify(dadosCondicao));
-		alert("Automatização criada com sucesso!");
-		window.location.href = "automatizacao.html";
-	}
-}
-
-/* Mostrar em "automatizacao.html" a condição
-   adicionada no campo correto */
-window.onload = function () {
-	if (window.location.pathname === "automatizacao.html") {
-		const dadosCondicao = JSON.parse(localStorage.getItem("dadosCondicao"));
-
-		// Adicionar, dependendo das variáveis escolhidas ao texto final
-		if (dadosCondicao) {
-			let condicaoTexto = "";
-			if (dadosCondicao.tipoCondicao === "temp") {
-				condicaoTexto += `Temperatura ${dadosCondicao.condicaoComparacao} ${dadosCondicao.valor} ºC<br>`;
-			} else if (dadosCondicao.tipoCondicao === "hum") {
-				condicaoTexto += `Humidade ${dadosCondicao.condicaoComparacao} ${dadosCondicao.valor}%<br>`;
-			} else if (dadosCondicao.tipoCondicao === "lum") {
-				condicaoTexto += `Luminosidade ${dadosCondicao.luminosidade}<br>`;
-			}
-
-			const div = document.createElement("div");
-			div.innerHTML = condicaoTexto;
-			div.style.marginBottom = "10px";
-
-			div.classList.add("add-cond");
-
-			if (dadosCondicao.tipoAcao === "ligar") {
-				document.querySelector(".ligar-container").prepend(div);
-			} else if (dadosCondicao.tipoAcao === "desligar") {
-				document.querySelector(".desligar-container").prepend(div);
-			}
-		}
-	}
-}
-
 
 window.onload = function () {
 	if (window.location.pathname.includes("main-page.html")) {

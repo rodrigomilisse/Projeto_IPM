@@ -9,10 +9,10 @@
 	<link rel="stylesheet" href="css/position.css">
 	<link rel="stylesheet" href="css/colors.css">
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<script src="js/addcond.js" defer></script>
 </head>
 
 <body class="add-cond">
-	<script src="js/behaviour.js"></script>
 	<header>
 		<a href="automatizacao.html" class="back">←</a>
 		<h1>Adicionar Condição:</h1>
@@ -45,8 +45,8 @@
 			</div>
 		</div>
 		<div class="botoes-container">
-			<button id="confirmar" onclick="confirmarCond()">✔️Confirmar</button>
-			<button id="cancelar" onclick="cancelarCond()">❌Cancelar</button>
+			<button type="button" id="confirmar" onclick="confirmarCond()">✔️Confirmar</button>
+			<button type="button" id="cancelar" onclick="cancelarCond()">❌Cancelar</button>
 		</div>
 	</main>
 	<footer class="menu-inferior">
@@ -96,6 +96,7 @@
 			</a>
 		</div>
 	</footer>
+	<script src="js/behaviour.js"></script>
 </body>
 
 </html>

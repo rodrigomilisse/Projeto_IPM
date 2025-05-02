@@ -153,8 +153,8 @@ select {
 	border-radius: var(--container-border-radius);
 }
 
-.ligar-container a,
-.desligar-container a {
+.ligar-container button,
+.desligar-container button {
 	margin-bottom: 20px;
 	padding: 10px;
 	border: 2px solid #4CAF50;
