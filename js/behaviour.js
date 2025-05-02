@@ -90,8 +90,6 @@ function agendarRega() {
 	}
 }
 
-let isSyncing = false;
-
 function confirmar() {
 	const resposta = confirm("Tem a certeza que deseja confirmar esta automatização?");
 	if (resposta) {
