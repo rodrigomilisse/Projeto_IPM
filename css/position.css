@@ -47,7 +47,9 @@ button {
 	align-items: start;
 	text-align: justify;
 	flex-direction: column;
-	width: 85%;
+	width: 100%;
+	left: 100px;
+	padding-left: 0;
 
 }
 
@@ -66,9 +68,11 @@ h1 {
 	padding-bottom: 800px;
 }
 
-.relatórios {
+.report-list {
 	display: grid;
-	width: 85%;
+	left: 0;
+	padding: 1vw;
+	margin: 1vw;
 }
 
 footer.menu-inferior {
