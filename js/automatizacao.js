@@ -3,20 +3,14 @@
 
 renderConditions = function () {
 	console.log("rendering");
-	//if (window.location.pathname === "automatizacao.html") {
-	document.querySelectorAll("add-cond").forEach(el => el.remove());
+	document.querySelectorAll(".add-cond").forEach(el => el.remove());
 
 	const condicoes = JSON.parse(localStorage.getItem("condicoes"));
 	while (condicoes.length > 0) {
 		let dadosCondicao = condicoes.pop();
 		if (dadosCondicao.zona !== document.getElementById("zona").value) {
-			console.log(dadosCondicao.zona + "!=");
-			console.log(document.getElementById("zona").value);
 			continue;
 		}
-		console.log(dadosCondicao.zona + "=");
-		console.log(document.getElementById("zona").value);
-		console.log(dadosCondicao);
 
 		// Adicionar, dependendo das variáveis escolhidas ao texto final
 		if (dadosCondicao) {
@@ -41,7 +35,6 @@ renderConditions = function () {
 			}
 		}
 	}
-	//}
 }
 window.onload = function () {
 	renderConditions();
