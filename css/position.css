@@ -17,6 +17,16 @@ body {
 	flex-direction: column;
 }
 
+button {
+	padding: 0.5rem 0.5rem;
+	margin-top: 10px;
+	font-size: 16px;
+}
+
+#next-rega-btn {
+	display: block;
+}
+
 .monitorizacao-container,
 .automatizacao-container,
 .type-cond-container,
@@ -89,4 +99,93 @@ svg {
 	max-height: 30vh;
 	width: 20vw;
 	height: auto;
+}
+
+.back {
+	position: absolute;
+	top: 2vh;
+	left: 2vw;
+	font-size: 3rem;
+}
+
+/*------------------------------
+--------------------------------
+--------------------------------*/
+
+.dados {
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+}
+
+.dado {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.ligar-container,
+.desligar-container,
+.add-cond-container {
+	display: flex;
+}
+
+.ligar-container,
+.desligar-container {
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.botoes-container button,
+#add-cond {
+	padding: 10px 10px;
+}
+
+#add-cond {
+	margin-top: 5px;
+}
+
+.add-cond h1 {
+	padding-top: 20px;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+input[type="number"] {
+	margin-left: 10px;
+	padding: 5px;
+	width: 150px;
+}
+
+#condicao-exibicao {
+	padding: 10px;
+	text-align: center;
+}
+
+.ligar-container div,
+.desligar-container div {
+	padding: 10px;
+	text-align: center;
+}
+
+.square-regas {
+	padding: 0px 20px;
+	width: 85%;
+	margin: 20px auto 50px;
+}
+
+.square-regas h2 {
+	margin-bottom: 10px;
+}
+
+.link-block {
+	display: block;
+}
+
+.linha-zona {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	margin: 5px 0;
 }

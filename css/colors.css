@@ -3,12 +3,50 @@
 	--nav-bar-color: #7D8C8C;
 	--highlight-color: green;
 	--menu-color: #D3D3D3;
+	--container-border-radius: 8px;
 }
 
 body {
 	background-color: var(--main-background);
 	font-family: -apple-system, "Helvetica Neue", sans-serif;
-	font-size: small;
+	font-size: 1.2rem;
+}
+
+h1 {
+	font-family: 'Bebas Neue', sans-serif;
+	color: #F2EFE7;
+}
+
+#relatorios_detalhados h2 {
+	font-family: 'Bebas Neue', sans-serif;
+	color: #F2EFE7;
+	margin-top: 6vh;
+	margin-bottom: 0;
+	text-align: left;
+}
+
+button {
+	border: none;
+	border-radius: var(--container-border-radius);
+	cursor: pointer;
+	color: white;
+}
+
+#confirmar {
+	background-color: #28a745;
+}
+
+#cancelar {
+	background-color: #dc3545;
+}
+
+#status {
+	background-color: #FF8989;
+}
+
+#next-rega-btn {
+	background-color: #28a745;
+	transition: background-color 0.5s;
 }
 
 footer.menu-inferior {
@@ -26,6 +64,10 @@ footer.menu-inferior {
 	border: 2px solid black;
 }
 
+#regas-agendadas {
+	padding: 10px;
+}
+
 svg {
 	fill: white;
 }
@@ -34,15 +76,9 @@ svg {
 	fill: var(--highlight-color);
 }
 
-/**
-.relatório {
-	background-color: var(--menu-color);
-	margin: 2%;
-}*/
-
 .relatórios li {
 	list-style: none;
-	border-radius: 8px;
+	border-radius: var(--container-border-radius);
 }
 
 .report-container {
@@ -56,9 +92,151 @@ svg {
 
 .charts canvas {
 	background-color: var(--menu-color);
-	border-radius: 8px;
+	border-radius: var(--container-border-radius);
 }
 
 footer.menu-inferior {
 	background-color: var(--nav-bar-color);
+}
+
+.back {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/*---------------------------------------------
+-----------------------------------------------
+----------------------------------------------*/
+
+#zona {
+	font-size: 20px;
+}
+
+#status.ativado {
+	background-color: #A1DD70;
+}
+
+.dados {
+	margin-top: 20px;
+}
+
+.dado {
+	margin-bottom: 15px;
+}
+
+.label {
+	font-weight: bold;
+}
+
+.valor {
+	color: #007bff;
+}
+
+input[type="datetime-local"],
+select {
+	padding: 8px;
+	border-radius: var(--container-border-radius);
+	border: 1px solid;
+	font-size: 1em;
+}
+
+#next-rega-btn:active {
+	background-color: #218838;
+}
+
+.ligar-container,
+.desligar-container,
+.add-cond-container {
+	margin: 2vh 0;
+	border: 2px solid black;
+	border-radius: var(--container-border-radius);
+}
+
+.ligar-container a,
+.desligar-container a {
+	margin-bottom: 20px;
+	padding: 10px;
+	border: 2px solid #4CAF50;
+	background-color: #f2f9f2;
+	color: #333;
+	font-weight: bold;
+	border-radius: var(--container-border-radius);
+}
+
+.automatizacao-container a {
+	text-decoration: none;
+	color: black;
+}
+
+.add-cond h1 {
+	padding-top: 20px;
+	margin-bottom: 0;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 50px;
+	text-align: center;
+	color: #F2EFE7;
+}
+
+input[type="number"] {
+	margin-left: 10px;
+	border: none;
+	border-bottom: 2px solid black;
+	outline: none;
+	font-size: 16px;
+	padding: 5px;
+	width: 150px;
+	background: transparent;
+}
+
+input[type="number"]::placeholder {
+	color: black;
+}
+
+#condicao-exibicao {
+	padding: 10px;
+	border: 2px solid #4CAF50;
+	background-color: #f2f9f2;
+	color: #333;
+	font-size: 18px;
+	font-weight: bold;
+	border-radius: 8px;
+	text-align: center;
+}
+
+.ligar-container div,
+.desligar-container div {
+	padding: 10px;
+	border: 2px solid #4CAF50;
+	background-color: #f2f9f2;
+	color: #333;
+	font-size: 18px;
+	font-weight: bold;
+	border-radius: 8px;
+	text-align: center;
+}
+
+.square-regas {
+	background-color: #c3c3c3;
+	border: 2px solid black;
+	border-radius: 10px;
+	padding: 0px 20px;
+	width: 85%;
+	margin: 20px auto 50px;
+}
+
+.square-regas h2 {
+	font-size: 20px;
+	font-family: sans-serif;
+	color: black;
+	margin-bottom: 10px;
+}
+
+.linha-zona {
+	color: white;
+	background-color: #228B22;
+	padding: 10px;
+	margin: 5px 0;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
