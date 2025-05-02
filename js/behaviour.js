@@ -92,25 +92,6 @@ function agendarRega() {
 
 let isSyncing = false;
 
-function sincronizarDropdowns(dropdown) {
-	if (isSyncing) {
-		return
-	}
-
-	isSyncing = true;
-
-	let zona1 = document.getElementById("zona1");
-	let zona2 = document.getElementById("zona2");
-
-	if (dropdown === zona1) {
-		zona2.value = zona1.value;
-	} else {
-		zona1.value = zona2.value;
-	}
-
-	isSyncing = false;
-}
-
 function confirmar() {
 	const resposta = confirm("Tem a certeza que deseja confirmar esta automatização?");
 	if (resposta) {

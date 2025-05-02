@@ -19,26 +19,21 @@
 	</header>
 	<main>
 		<div class="automatizacao-container">
-			Ligar
 			<select id="zona1" name="zona1" onchange="sincronizarDropdowns(this)">
 				<option value="zona1">Estufa Norte</option>
 				<option value="zona2">Parque Sul</option>
 				<option value="zona3">Campo Verde</option>
 				<option value="zona4">Plantação de Milho</option>
 			</select>
-			se:
+			<br><br>
+			Ligar se:
 			<div class="ligar-container">
 				<a href="adicionar_condicao.html?acao=ligar">
 					<button id="add-cond">+</button>Adicionar Condição
 				</a>
 			</div>
 			Desligar
-			<select id="zona2" name="zona2" onchange="sincronizarDropdowns(this)">
-				<option value="zona1">Estufa Norte</option>
-				<option value="zona2">Parque Sul</option>
-				<option value="zona3">Campo Verde</option>
-				<option value="zona4">Plantação de Milho</option>
-			</select>
+
 			se:
 			<div class="desligar-container">
 				<a href="adicionar_condicao.html?acao=desligar">
