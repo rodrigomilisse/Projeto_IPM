@@ -1,14 +1,3 @@
-/*
-function confirmar() {
-	const resposta = confirm("Tem a certeza que deseja confirmar esta automatização?");
-	if (resposta) {
-		alert("Automatização criada!");
-	} else {
-		alert("Automatização cancelada!");
-	}
-}
-*/
-
 function formatarData(recData) {
 	const data = new Date(recData);
 
@@ -44,7 +33,7 @@ function mainLoad() {
 		.sort((a, b) => a.diferenca - b.diferenca); // Ordenar da menor para a maior diferença de tempo
 
 	// Mostrar 3 regas mais próximas
-	const regasMostrar = regasOrdenadas.slice(0, 3);
+	const regasMostrar = regasOrdenadas.slice(0, 8);
 
 	// Se existir pelo menos uma rega para mostrar
 	if (regasMostrar.length > 0) {

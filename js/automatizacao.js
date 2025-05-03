@@ -26,7 +26,9 @@ renderConditions = function () {
 
 				const div = document.createElement("div");
 				div.innerHTML = condicaoTexto;
-				div.style.marginBottom = "10px";
+				div.style.marginBottom = "1vh";
+				div.style.boxSizing = "border-box";
+				div.style.width = "100%";
 				div.classList.add("add-cond");
 
 				if (dadosCondicao.tipoAcao === "ligar") {

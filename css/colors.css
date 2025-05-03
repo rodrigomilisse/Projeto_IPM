@@ -32,6 +32,9 @@ button {
 	border-radius: var(--container-border-radius);
 	cursor: pointer;
 	color: white;
+	transition: background-color 0.5s;
+	padding: 1vh 1vw;
+	margin: 1vh 1vw;
 }
 
 #confirmar {
@@ -49,22 +52,18 @@ button {
 
 #next-rega-btn {
 	background-color: #28a745;
-	transition: background-color 0.5s;
 }
 
-footer.menu-inferior {
-	border-top: 2px solid #A1DD70;
+#next-rega-btn:active {
+	background-color: #218838;
 }
 
-.container,
-.regas-container,
-.settings-container,
-.regas-agendadas,
-.monitorizacao-container,
-.automatizacao-container,
-.type-cond-container,
-.size-cond-container,
-.report-container {
+.ligar-container button,
+.desligar-container button {
+	background-color: #28a745;
+}
+
+.container {
 	background-color: var(--menu-color);
 	border-radius: var(--container-border-radius);
 	box-shadow: var(--container-shadow);
@@ -73,17 +72,31 @@ footer.menu-inferior {
 	margin: 2vh;
 }
 
+.container * {
+	text-decoration: inherit;
+}
+
+a {
+	color: inherit
+}
+
+.container h2 {
+	font-size: 20px;
+	color: black;
+	margin-bottom: 10px;
+}
+
+.settings-container,
 .regas-container {
 	padding: 1vw;
 }
 
-/* Container for the toggle switch */
-.settings-container {
+#regas-agendadas {
 	padding: 1vw;
 }
 
-#regas-agendadas {
-	padding: 1vh;
+footer.menu-inferior {
+	border-top: 2px solid #A1DD70;
 }
 
 svg {
@@ -92,21 +105,6 @@ svg {
 
 .selected {
 	fill: var(--highlight-color);
-}
-
-.report-list li {
-	list-style: none;
-	border-radius: var(--container-border-radius);
-}
-
-.report-container a {
-	text-decoration: inherit;
-	color: inherit;
-}
-
-.charts canvas {
-	background-color: var(--menu-color);
-	border-radius: var(--container-border-radius);
 }
 
 footer.menu-inferior {
@@ -119,28 +117,8 @@ footer.menu-inferior {
 	font-weight: bold;
 }
 
-/*---------------------------------------------
------------------------------------------------
-----------------------------------------------*/
-
-#zona {
-	font-size: 20px;
-}
-
 #status.ativado {
 	background-color: #A1DD70;
-}
-
-.dados {
-	margin-top: 20px;
-}
-
-.dado {
-	margin-bottom: 15px;
-}
-
-.label {
-	font-weight: bold;
 }
 
 .valor {
@@ -155,9 +133,6 @@ select {
 	font-size: 1em;
 }
 
-#next-rega-btn:active {
-	background-color: #218838;
-}
 
 .ligar-container,
 .desligar-container,
@@ -165,26 +140,6 @@ select {
 	margin: 2vh 0;
 	border: 2px solid black;
 	border-radius: var(--container-border-radius);
-}
-
-.ligar-container button,
-.desligar-container button {
-	margin-bottom: 20px;
-	padding: 10px;
-	border: 2px solid #4CAF50;
-	background-color: #f2f9f2;
-	color: #333;
-	font-weight: bold;
-	border-radius: var(--container-border-radius);
-}
-
-.add-cond h1 {
-	padding-top: 20px;
-	margin-bottom: 0;
-	font-family: 'Bebas Neue', sans-serif;
-	font-size: 50px;
-	text-align: center;
-	color: #F2EFE7;
 }
 
 input[type="number"] {
@@ -202,19 +157,9 @@ input[type="number"]::placeholder {
 	color: black;
 }
 
-#condicao-exibicao {
-	padding: 10px;
-	border: 2px solid #4CAF50;
-	background-color: #f2f9f2;
-	color: #333;
-	font-size: 18px;
-	font-weight: bold;
-	border-radius: 8px;
-	text-align: center;
-}
-
 .ligar-container div,
-.desligar-container div {
+.desligar-container div,
+.linha-zona {
 	padding: 10px;
 	border: 2px solid #4CAF50;
 	background-color: #f2f9f2;
@@ -223,34 +168,17 @@ input[type="number"]::placeholder {
 	font-weight: bold;
 	border-radius: 8px;
 	text-align: center;
-}
-
-
-.regas-container h2 {
-	font-size: 20px;
-	color: black;
-	margin-bottom: 10px;
-}
-
-.linha-zona {
-	color: white;
-	background-color: #228B22;
-	border-radius: var(--container-border-radius);
 }
 
 /* Style for the switch container */
 .switch {
 	position: relative;
 	display: inline-block;
-	width: 50px;
-	height: 24px;
 }
 
 /* Hide the default checkbox */
 .switch input {
 	opacity: 0;
-	width: 0;
-	height: 0;
 }
 
 
