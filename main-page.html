@@ -9,15 +9,16 @@
 	<link rel="stylesheet" href="css/position.css">
 	<link rel="stylesheet" href="css/colors.css">
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-	<script src="js/behaviour.js"></script>
+	<script src="js/main-page.js"></script>
+	<script src="js/settings.js"></script>
 </head>
 
-<body class="main-page">
+<body class="main-page" onload="mainLoad(); toggleAction()">
 	<header>
 		<h1>REGA<sup>+</sup></h1>
 	</header>
 	<main>
-		<div class="square-regas">
+		<div class="regas-container">
 			<h2>Próximas regas agendadas:</h>
 				<div class="regas-agendadas" id="regas-agendadas">
 				</div>

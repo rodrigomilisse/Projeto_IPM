@@ -1,3 +1,12 @@
+window.onload = function () {
+	toggleAction();
+	desenharTemperatura();
+	desenharHumidade();
+	desenharChuva();
+	desenharVento();
+	desenharConsumo();
+}
+
 function obterUltimos7DiasSemana() {
 	const nomesDias = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
 	const hoje = new Date();

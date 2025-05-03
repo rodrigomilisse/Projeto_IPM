@@ -9,14 +9,21 @@
 	<link rel="stylesheet" href="css/position.css">
 	<link rel="stylesheet" href="css/colors.css">
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-	<script src="js/behaviour.js"></script>
+	<script src="js/settings.js"></script>
 </head>
 
-<body>
+<body onload="toggleAction()">
 	<header>
 
 	</header>
 	<main>
+		<div class="settings-container">
+			Darkmode
+			<label class="switch">
+				<input type="checkbox" id="toggleSwitch" onchange="toggleChanged()">
+				<span class="slider round"></span>
+			</label>
+		</div>
 
 	</main>
 	<footer class="menu-inferior">

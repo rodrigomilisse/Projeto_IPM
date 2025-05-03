@@ -41,6 +41,7 @@ renderConditions = function () {
 	}
 }
 window.onload = function () {
+	toggleAction();
 	renderConditions();
 }
 function adicionarCondicaoLigar() {

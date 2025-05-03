@@ -27,6 +27,7 @@ button {
 	display: block;
 }
 
+.settings-container,
 .monitorizacao-container,
 .automatizacao-container,
 .type-cond-container,
