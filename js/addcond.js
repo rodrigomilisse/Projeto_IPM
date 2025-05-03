@@ -30,7 +30,6 @@ function confirmarCond() {
 			luminosidade = document.getElementById("luminosidade").value;
 			break;
 	}
-	console.log("success");
 
 	const dadosCondicao = {
 		zona,
@@ -40,7 +39,7 @@ function confirmarCond() {
 		valor,
 		luminosidade
 	};
-	const condicoes = JSON.parse(localStorage.getItem("condicoes")) || [];
+	const condicoes = JSON.parse(localStorage.getItem("condicoes") || "[]");
 
 	console.log("success");
 	condicoes.push(dadosCondicao);

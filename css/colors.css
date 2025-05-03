@@ -36,7 +36,8 @@ button {
 	background-color: #28a745;
 }
 
-#cancelar {
+#cancelar,
+#clearConditions {
 	background-color: #dc3545;
 }
 
