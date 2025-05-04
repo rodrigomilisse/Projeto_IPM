@@ -1,131 +1,133 @@
 body {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: black;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-family: sans-serif;
 }
 
 .container {
-    width: 50%;
-    height: 100%;
-    background-color: #222;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    overflow: hidden;
-    justify-content: space-between;
+	width: 50%;
+	height: 100%;
+	background-color: #222;
+	border-radius: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px 0;
+	overflow: hidden;
+	justify-content: space-between;
 }
 
 h1 {
-    font-size: 50px;
-    margin: 0;
+	font-size: 50px;
+	margin: 0;
 }
 
 p {
-    font-size: 3vh;
-    margin-top: 5vh;
+	font-size: 3vh;
+	margin-top: 5vh;
 }
 
 select {
-    padding: 30px 20px;
-    border-radius: 10px;
-    border: none;
-    font-size: 30px;
-    background-color: #0a84ff;
-    color: white;
-    text-align: left;
-    appearance: none;
-    width: 80%;
-    max-width: 40vh;
-    position: relative;
-    background-image: url('downarrow.png');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 20px;
+	padding: 30px 20px;
+	border-radius: 10px;
+	border: none;
+	font-size: 30px;
+	background-color: #0a84ff;
+	color: white;
+	text-align: left;
+	appearance: none;
+	width: 80%;
+	max-width: 40vh;
+	position: relative;
+	background-image: url('imagens/downarrow.png');
+	background-repeat: no-repeat;
+	background-position: right 10px center;
+	background-size: 20px;
 }
 
 #confirmar {
-    background-color: #4CAF50 ;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 10px;
-    font-size: 30px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	padding: 15px 30px;
+	border-radius: 10px;
+	font-size: 30px;
 }
 
 #cancelar {
-    background-color: #F44336;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 10px;
-    font-size: 30px;
+	background-color: #F44336;
+	color: white;
+	border: none;
+	padding: 15px 30px;
+	border-radius: 10px;
+	font-size: 30px;
 }
 
 .middle {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
 }
 
 .bottom {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 12vh;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 12vh;
 }
 
 
 .content {
-    width: 90%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+	width: 90%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
 }
 
-#ativar, #desativar {
-    padding: 10px 3%;
-    border-radius: 10px;
-    width: 45%;
-    font-size: 18px;
-    width: 80%;
-    max-width: 500px;
-    margin: 10px 0;
-    color: white;
+#ativar,
+#desativar {
+	padding: 10px 3%;
+	border-radius: 10px;
+	width: 45%;
+	font-size: 18px;
+	width: 80%;
+	max-width: 500px;
+	margin: 10px 0;
+	color: white;
 }
-  
+
 #ativar.ativado {
-    background-color: green;
+	background-color: green;
 }
-  
+
 #desativar.ativado {
-    background-color: red;
-  }
-  
-#ativar, #desativar {
-    background-color: gray;
-    color: white;
+	background-color: red;
+}
+
+#ativar,
+#desativar {
+	background-color: gray;
+	color: white;
 }
 
 .button-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 400px;
-    margin-top: 20px;
-    gap: 20px;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	max-width: 400px;
+	margin-top: 20px;
+	gap: 20px;
 }
