@@ -52,3 +52,22 @@ function cancelarCond() {
 	alert("Condição cancelada!");
 	window.location.href = "automatizacao.html";
 }
+
+function changeConditionType() {
+	const tipoCondicao = document.getElementById("type-cond").value;
+	const numeroTemp = document.getElementById("numeroTemp");
+	const numeroHum = document.getElementById("numeroHum");
+	const luminosidadeContainer = document.getElementById("luminosidade-container");
+
+	numeroTemp.style.display = "none";
+	numeroHum.style.display = "none";
+	luminosidadeContainer.style.display = "none";
+
+	if (tipoCondicao === "temp") {
+		numeroTemp.style.display = "inline-block";
+	} else if (tipoCondicao === "hum") {
+		numeroHum.style.display = "inline-block";
+	} else if (tipoCondicao === "lum") {
+		luminosidadeContainer.style.display = "inline-block";
+	}
+}

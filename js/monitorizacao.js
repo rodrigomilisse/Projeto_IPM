@@ -4,60 +4,60 @@ function _getZoneInfo(zone) {
 			humidade: "62%",
 			temperatura: "20°C",
 			luminosidade: "Média",
-			nivelBateria: "85%",
-			statusRega: "Desativado",
+			battery: "85%",
+			status: "Desativado",
 			corFundoBotao: "#FF8989"
 		},
 		zona2: {
 			humidade: "71%",
 			temperatura: "25°C",
 			luminosidade: "Baixa",
-			nivelBateria: "91%",
-			statusRega: "Ativado",
+			battery: "91%",
+			status: "Ativado",
 			corFundoBotao: "#A1DD70"
 		},
 		zona3: {
 			humidade: "55%",
 			temperatura: "13°C",
 			luminosidade: "Baixa",
-			nivelBateria: "72%",
-			statusRega: "Desativado",
+			battery: "72%",
+			status: "Desativado",
 			corFundoBotao: "#FF8989"
 		},
 		zona4: {
 			humidade: "68%",
 			temperatura: "22°C",
 			luminosidade: "Média",
-			nivelBateria: "88%",
-			statusRega: "Ativado",
+			battery: "88%",
+			status: "Ativado",
 			corFundoBotao: "#A1DD70"
 		}
 	};
 	return zoneInfo[zone];
 }
 
-function mudarValores() {
+function changeZone() {
 	const zona = document.getElementById("zona").value;
 
 	info = _getZoneInfo(zona);
-	if (!info) return;
+	if (!info) {
+		alert("Erro info");
+		return;
+	}
 
-	document.getElementById("humidade").innerText = info.humidade;
-	document.getElementById("temperatura").innerText = info.temperatura;
-	document.getElementById("luminosidade").innerText = info.luminosidade;
-	document.getElementById("nivel-bateria").innerText = info.nivelBateria;
-	document.getElementById("status").innerText = info.statusRega;
-	document.getElementById("dataRega").value = "";
+	let dataPoints = ["humidade", "temperatura", "luminosidade", "battery", "status"];
+	dataPoints.forEach(d => {
+		document.getElementById(d).innerText = info[d];
+	});
 
 	const botao = document.getElementById("status");
-	botao.classList.remove("botao-desativado", "botao-ativado");
 	botao.style.backgroundColor = info.corFundoBotao;
 }
 
 function agendarRega() {
-	const dataRega = document.getElementById("dataRega").value;
+	const date = document.getElementById("date").value;
 
-	if (!dataRega) {
+	if (!date) {
 		alert("Por favor, selecione uma data e hora para agendar a rega.");
 		return;
 	}
@@ -67,7 +67,7 @@ function agendarRega() {
 	const zonaTexto = document.querySelector(`#zona option[value="${zona}"]`).textContent;
 
 	const regaAgendada = {
-		data: dataRega,
+		data: date,
 		zona: zonaTexto
 	};
 
@@ -77,7 +77,7 @@ function agendarRega() {
 
 	localStorage.setItem("regasAgendadas", JSON.stringify(regas));
 
-	alert(`A rega para ${zonaTexto} foi agendada para  ${dataRega}`);
+	alert(`A rega para ${zonaTexto} foi agendada para  ${date}`);
 }
 
 function ativarRega() {
@@ -89,24 +89,5 @@ function ativarRega() {
 	} else {
 		botao.innerText = "Desativado";
 		botao.classList.remove("ativado");
-	}
-}
-
-function mudarTexto() {
-	const tipoCondicao = document.getElementById("type-cond").value;
-	const numeroTemp = document.getElementById("numeroTemp");
-	const numeroHum = document.getElementById("numeroHum");
-	const luminosidadeContainer = document.getElementById("luminosidade-container");
-
-	numeroTemp.style.display = "none";
-	numeroHum.style.display = "none";
-	luminosidadeContainer.style.display = "none";
-
-	if (tipoCondicao === "temp") {
-		numeroTemp.style.display = "inline-block";
-	} else if (tipoCondicao === "hum") {
-		numeroHum.style.display = "inline-block";
-	} else if (tipoCondicao === "lum") {
-		luminosidadeContainer.style.display = "inline-block";
 	}
 }

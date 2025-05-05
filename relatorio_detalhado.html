@@ -14,7 +14,7 @@
 
 </head>
 
-<body id="relatorios_detalhados">
+<body id="relatorios_detalhados" onload="toggleAction(); drawGraphs()">
 	<nav>
 		<a href="relatorios.html" class="back">←</a>
 	</nav>
@@ -24,19 +24,19 @@
 	<main>
 		<h2>Temperatura</h2>
 		<div class="charts ">
-			<canvas class="container" id="temperatureChart" width="400" height="200"></canvas>
+			<canvas class="container" id="temperature" width="400" height="200"></canvas>
 
 			<h2>Humidade</h2>
-			<canvas class="container" id="humidityChart" width="400" height="200"></canvas>
+			<canvas class="container" id="humidity" width="400" height="200"></canvas>
 
 			<h2>Chuva</h2>
-			<canvas class="container" id="rainChart" width="400" height="200"></canvas>
+			<canvas class="container" id="rain" width="400" height="200"></canvas>
 
 			<h2>Vento</h2>
-			<canvas class="container" id="windChart" width="400" height="200"></canvas>
+			<canvas class="container" id="wind" width="400" height="200"></canvas>
 
 			<h2>Consumo de Água</h2>
-			<canvas class="container" id="consumptionChart" width="400" height="200"></canvas>
+			<canvas class="container" id="consumption" width="400" height="200"></canvas>
 		</div>
 	</main>
 	<footer class="menu-inferior">

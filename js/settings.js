@@ -11,9 +11,9 @@ function toggleAction() {
 		root.style.setProperty('--menu-color', 'grey');
 		root.style.setProperty('--container-shadow', '0 2px 6px rgba(255, 255, 255, 0.5)');
 	} else {
-		root.style.setProperty('--main-background', '#48A6A7');
-		root.style.setProperty('--nav-bar-color', '#7D8C8C');
-		root.style.setProperty('--menu-color', '#D3D3D3');
+		root.style.setProperty('--main-background', '#2A9D8F');
+		root.style.setProperty('--nav-bar-color', '#264653');
+		root.style.setProperty('--menu-color', '#F4F4F4');
 		root.style.setProperty('--container-shadow', '0 2px 6px rgba(0, 0, 0, 1)');
 	}
 }
