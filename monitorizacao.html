@@ -16,40 +16,43 @@
 	<header>
 		<h1>Monitorização em Tempo Real</h1>
 	</header>
-	<div class="container">
-		<div>Seleciona a zona de rega:</div>
-		<select id="zona" name="zona" onchange="mudarValores()">
-			<option value="zona1">Estufa Norte</option>
-			<option value="zona2">Parque Sul</option>
-			<option value="zona3">Campo Verde</option>
-			<option value="zona4">Plantação de Milho</option>
-		</select>
-		<div>Estado da rega:
-			<button id="status" onclick="ativarRega()">Desativado</button>
+	<main>
+
+		<div class="container">
+			<div>Seleciona a zona de rega:</div>
+			<select id="zona" name="zona" onchange="mudarValores()">
+				<option value="zona1">Estufa Norte</option>
+				<option value="zona2">Parque Sul</option>
+				<option value="zona3">Campo Verde</option>
+				<option value="zona4">Plantação de Milho</option>
+			</select>
+			<div>Estado da rega:
+				<button id="status" onclick="ativarRega()">Desativado</button>
+			</div>
+			<h2>Estado do Sistema</h2>
+			<div class="dados">
+				<div class="dado">
+					<span class="label">Humidade do Solo:</span>
+					<span class="valor" id="humidade">60%</span>
+				</div>
+				<div class="dado">
+					<span class="label">Temperatura:</span>
+					<span class="valor" id="temperatura">22°C</span>
+				</div>
+				<div class="dado">
+					<span class="label">Luminosidade</span>
+					<span class="valor" id="luminosidade">Média</span>
+				</div>
+				<div class="dado">
+					<span class="label">Nível da Bateria:</span>
+					<span class="valor" id="nivel-bateria">85%</span>
+				</div>
+				<span class="label">Agendar próxima rega::</span><br>
+				<input type="datetime-local" id="dataRega" name="dataRega">
+				<button id="next-rega-btn" onclick="agendarRega()">Agendar Rega</button>
+			</div>
 		</div>
-		<h2>Estado do Sistema</h2>
-		<div class="dados">
-			<div class="dado">
-				<span class="label">Humidade do Solo:</span>
-				<span class="valor" id="humidade">60%</span>
-			</div>
-			<div class="dado">
-				<span class="label">Temperatura:</span>
-				<span class="valor" id="temperatura">22°C</span>
-			</div>
-			<div class="dado">
-				<span class="label">Luminosidade</span>
-				<span class="valor" id="luminosidade">Média</span>
-			</div>
-			<div class="dado">
-				<span class="label">Nível da Bateria:</span>
-				<span class="valor" id="nivel-bateria">85%</span>
-			</div>
-			<span class="label">Agendar próxima rega::</span><br>
-			<input type="datetime-local" id="dataRega" name="dataRega">
-			<button id="next-rega-btn" onclick="agendarRega()">Agendar Rega</button>
-		</div>
-	</div>
+	</main>
 	<footer class="menu-inferior">
 		<div class="menu-item">
 			<a href="main-page.html" title="Monitorização"><svg xmlns="http://www.w3.org/2000/svg"
