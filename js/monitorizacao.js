@@ -1,7 +1,5 @@
-function mudarValores() {
-	const zona = document.getElementById("zona").value;
-
-	const zonasInfo = {
+function _getZoneInfo(zone) {
+	const zoneInfo = {
 		zona1: {
 			humidade: "62%",
 			temperatura: "20°C",
@@ -35,8 +33,13 @@ function mudarValores() {
 			corFundoBotao: "#A1DD70"
 		}
 	};
+	return zoneInfo[zone];
+}
 
-	const info = zonasInfo[zona];
+function mudarValores() {
+	const zona = document.getElementById("zona").value;
+
+	info = _getZoneInfo(zona);
 	if (!info) return;
 
 	document.getElementById("humidade").innerText = info.humidade;
@@ -44,7 +47,7 @@ function mudarValores() {
 	document.getElementById("luminosidade").innerText = info.luminosidade;
 	document.getElementById("nivel-bateria").innerText = info.nivelBateria;
 	document.getElementById("status").innerText = info.statusRega;
-	document.getElementById("dataRega").value = ""; // still undefined in original
+	document.getElementById("dataRega").value = "";
 
 	const botao = document.getElementById("status");
 	botao.classList.remove("botao-desativado", "botao-ativado");

@@ -41,13 +41,15 @@ button {
 	background-color: #28a745;
 }
 
-#cancelar,
-#clearConditions {
-	background-color: #dc3545;
-}
 
 #status {
 	background-color: #FF8989;
+}
+
+#cancelar,
+#clearConditions,
+#next-rega-btn {
+	background-color: #dc3545;
 }
 
 #next-rega-btn {
