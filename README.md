@@ -1,6 +1,7 @@
 project/
 ├── adicionar_condicao.html
 ├── automatizacao.html
+├── footer.html
 ├── main-page.html
 ├── monitorizacao.html
 ├── relatorio_detalhado.html

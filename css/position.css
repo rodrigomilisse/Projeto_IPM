@@ -81,7 +81,6 @@ footer.menu-inferior {
 	align-items: center;
 	height: var(--nav-bar-height);
 	max-height: var(--nav-bar-height);
-	/*min-width: var(--min-width);*/
 }
 
 footer.menu-inferior .menu-item a {

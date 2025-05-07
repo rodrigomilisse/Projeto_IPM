@@ -23,8 +23,24 @@ function loadNavIcons() {
 		svg.setAttribute("viewBox", "0 0 24 24");
 	});
 }
+
+function loadFooter() {
+	fetch("footer.html")
+		.then(res => res.text())
+		.then(footer => {
+			document.body.insertAdjacentHTML("beforeend", footer);
+			const currentPage = window.location.pathname.split("/").pop();
+			const links = document.querySelectorAll('footer a');
+			links.forEach(link => {
+				if (link.href.includes(currentPage)) {
+					link.querySelector("svg").classList.add('selected');
+				}
+			}
+			);
+		});
+}
 function loadSettings() {
-	loadNavIcons();
+	loadFooter();
 	loadDarkMode();
 }
 
