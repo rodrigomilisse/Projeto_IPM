@@ -95,12 +95,10 @@ function ativarRega() {
 }
 
 function checkDate() {
-	alert("checkingDate");
 	const data = document.getElementById("date");
 	const button = document.getElementById("next-rega-btn"); // usa "-" no id
 
 	if (!data || !data.value) {
-		alert("nayyy");
 		button.onclick = null;
 		return;
 	}
@@ -113,7 +111,6 @@ function checkDate() {
 		alert("Por favor insira uma data no futuro");
 		return;
 	}
-	alert("yeay");
 	button.style.backgroundColor = "var(--positive-color)";
 	button.style.cursor = "pointer";
 	button.onclick = agendarRega;
