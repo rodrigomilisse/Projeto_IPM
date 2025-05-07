@@ -94,10 +94,10 @@ function ativarRega() {
 	loadZoneInfo();
 }
 
+let warned = false;
 function checkDate() {
 	const data = document.getElementById("date");
-	const button = document.getElementById("next-rega-btn"); // usa "-" no id
-
+	const button = document.getElementById("next-rega-btn");
 	if (!data || !data.value) {
 		button.onclick = null;
 		return;
@@ -108,7 +108,10 @@ function checkDate() {
 
 	if (selectedDate <= now) {
 		button.onclick = null;
-		alert("Por favor insira uma data no futuro");
+		if (!warned) {
+			alert("Por favor insira uma data no futuro");
+			warned = true;
+		}
 		return;
 	}
 	button.style.backgroundColor = "var(--positive-color)";
