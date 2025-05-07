@@ -43,7 +43,6 @@ button {
 	border-radius: var(--container-border-radius);
 	cursor: pointer;
 	color: white;
-	transition: background-color 0.5s;
 	padding: 1vh 1vw;
 	margin: 1vh 1vw;
 }
@@ -55,6 +54,7 @@ button {
 
 #status {
 	background-color: #FF8989;
+	transition: background-color 0.5s;
 }
 
 #cancelar {
