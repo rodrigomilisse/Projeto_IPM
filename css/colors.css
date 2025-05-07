@@ -14,7 +14,8 @@
 
 	--positive-color: green;
 	--negative-color: red;
-	--unaveilable-color: #9aa89a;
+	--unaveilable-green: #9aa89a;
+	--unavailable-red: #B35D5D;
 }
 
 body {
@@ -56,14 +57,21 @@ button {
 	background-color: #FF8989;
 }
 
-#cancelar,
-#clearConditions,
-#next-rega-btn {
+#cancelar {
 	background-color: var(--negative-color);
 }
 
-#next-rega-btn {
-	background-color: var(--unaveilable-color);
+.deactivated-green {
+	background-color: var(--unaveilable-green);
+	cursor: not-allowed;
+}
+
+.red {
+	background-color: var(--negative-color);
+}
+
+.deactivated-red {
+	background-color: var(--unavailable-red);
 	cursor: not-allowed;
 }
 

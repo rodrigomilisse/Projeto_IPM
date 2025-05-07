@@ -13,13 +13,13 @@
 
 </head>
 
-<body class="automatizacao" onload="loadSettings(); renderConditions()">
+<body class="automatizacao" onload="loadSettings(); renderConditions(); checkClear()">
 	<header>
 		<h1>Gestão de Rega Automática</h1>
 	</header>
 	<main>
 		<div class="container">
-			<select id="zona" name="zona" onchange="renderConditions()">
+			<select id="zona" name="zona" onchange="renderConditions(); checkClear()">
 				<option value="zona1">Estufa Norte</option>
 				<option value="zona2">Parque Sul</option>
 				<option value="zona3">Campo Verde</option>
@@ -35,7 +35,8 @@
 				<button onclick="adicionarCondicaoDesligar()">Adicionar condição</button>
 			</div>
 			<div class="botoes-container">
-				<button type="button" id="clearConditions" onclick="clearConditions()">Limpar</button>
+				<button type="button" id="clearConditions" class="red"
+					onclick="clearConditions(); checkClear()">Limpar</button>
 			</div>
 		</div>
 	</main>

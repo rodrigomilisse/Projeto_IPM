@@ -57,6 +57,19 @@ function adicionarCondicaoDesligar() {
 	}
 }
 
+function checkClear() {
+	const zone = document.getElementById("zona").value;
+	const condicoes = JSON.parse(localStorage.getItem("condicoes") || "[]");
+	const clear = document.getElementById("clearConditions");
+	clear.classList.add("deactivated-red");
+	condicoes.forEach(c => {
+		if (c.zona === zone) {
+			console.log(c.zona);
+			clear.classList.remove("deactivated-red");
+			return;
+		}
+	})
+}
 function clearConditions() {
 	console.log("clear");
 
