@@ -1,5 +1,5 @@
 :root {
-	--nav-bar-height: 10vh;
+	--nav-bar-height: 8vh;
 	--min-width: 300px;
 }
 
@@ -88,8 +88,9 @@ footer.menu-inferior .menu-item a {
 	font-size: 6em;
 	text-decoration: none;
 	color: white;
-	display: block;
+	display: flex;
 	text-align: center;
+	max-height: var(--nav-bar-height);
 }
 
 footer svg {
