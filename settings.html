@@ -11,7 +11,7 @@
 	<script src="js/settings.js"></script>
 </head>
 
-<body onload="toggleAction()">
+<body onload="loadSettings()">
 	<header>
 		<h1>Definições</h1>
 	</header>
@@ -19,7 +19,7 @@
 		<div class="settings-container container">
 			Darkmode
 			<label class="switch ">
-				<input type="checkbox" id="toggleSwitch" onchange="toggleChanged()">
+				<input type="checkbox" id="toggleSwitch" onchange="loadDarkMode()">
 				<span class="slider round"></span>
 			</label>
 		</div>

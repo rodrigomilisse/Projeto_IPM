@@ -34,7 +34,6 @@ function _getDetailedZoneInfo(zone) {
 	return zoneInfo[zone];
 }
 
-
 function obterUltimos7DiasSemana() {
 	const nomesDias = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
 	const hoje = new Date();

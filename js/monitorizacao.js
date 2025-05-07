@@ -1,45 +1,45 @@
+const active = "Ativo";
+const deactivated = "Desativado";
+
+let zoneInfo = {
+	zona1: {
+		humidade: "62%",
+		temperatura: "20°C",
+		luminosidade: "Média",
+		battery: "85%",
+		status: deactivated,
+	},
+	zona2: {
+		humidade: "71%",
+		temperatura: "25°C",
+		luminosidade: "Baixa",
+		battery: "91%",
+		status: active
+	},
+	zona3: {
+		humidade: "55%",
+		temperatura: "13°C",
+		luminosidade: "Baixa",
+		battery: "72%",
+		status: deactivated,
+	},
+	zona4: {
+		humidade: "68%",
+		temperatura: "22°C",
+		luminosidade: "Média",
+		battery: "88%",
+		status: active
+	}
+};
+
 function _getZoneInfo(zone) {
-	const zoneInfo = {
-		zona1: {
-			humidade: "62%",
-			temperatura: "20°C",
-			luminosidade: "Média",
-			battery: "85%",
-			status: "Desativado",
-			corFundoBotao: "#FF8989"
-		},
-		zona2: {
-			humidade: "71%",
-			temperatura: "25°C",
-			luminosidade: "Baixa",
-			battery: "91%",
-			status: "Ativado",
-			corFundoBotao: "#A1DD70"
-		},
-		zona3: {
-			humidade: "55%",
-			temperatura: "13°C",
-			luminosidade: "Baixa",
-			battery: "72%",
-			status: "Desativado",
-			corFundoBotao: "#FF8989"
-		},
-		zona4: {
-			humidade: "68%",
-			temperatura: "22°C",
-			luminosidade: "Média",
-			battery: "88%",
-			status: "Ativado",
-			corFundoBotao: "#A1DD70"
-		}
-	};
 	return zoneInfo[zone];
 }
 
-function changeZone() {
+function loadZoneInfo() {
 	const zona = document.getElementById("zona").value;
 
-	info = _getZoneInfo(zona);
+	let info = _getZoneInfo(zona);
 	if (!info) {
 		alert("Erro info");
 		return;
@@ -51,7 +51,7 @@ function changeZone() {
 	});
 
 	const botao = document.getElementById("status");
-	botao.style.backgroundColor = info.corFundoBotao;
+	botao.style.backgroundColor = botao.innerText == active ? "var(--positive-color)" : "var(--negative-color)";
 }
 
 function agendarRega() {
@@ -82,12 +82,39 @@ function agendarRega() {
 
 function ativarRega() {
 	const botao = document.getElementById("status");
+	let zona = document.getElementById("zona").value;
 
-	if (botao.innerText === "Desativado") {
-		botao.innerText = "Ativado";
-		botao.classList.add("ativado");
+	if (botao.innerText === deactivated) {
+		zoneInfo[zona].status = active;
+		botao.style.backgroundColor = "var(--positive-color)";
 	} else {
-		botao.innerText = "Desativado";
-		botao.classList.remove("ativado");
+		zoneInfo[zona].status = deactivated;
+		botao.style.backgroundColor = "var(--negative-color)";
 	}
+	loadZoneInfo();
+}
+
+function checkDate() {
+	alert("checkingDate");
+	const data = document.getElementById("date");
+	const button = document.getElementById("next-rega-btn"); // usa "-" no id
+
+	if (!data || !data.value) {
+		alert("nayyy");
+		button.onclick = null;
+		return;
+	}
+
+	const selectedDate = new Date(data.value);
+	const now = new Date();
+
+	if (selectedDate <= now) {
+		button.onclick = null;
+		alert("Por favor insira uma data no futuro");
+		return;
+	}
+	alert("yeay");
+	button.style.backgroundColor = "var(--positive-color)";
+	button.style.cursor = "pointer";
+	button.onclick = agendarRega;
 }

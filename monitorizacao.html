@@ -12,7 +12,7 @@
 	<script src="js/settings.js"></script>
 </head>
 
-<body class="monitorizacao" onload="toggleAction()">
+<body class="monitorizacao" onload="loadSettings(); loadZoneInfo()">
 	<header>
 		<h1>Monitorização em Tempo Real</h1>
 	</header>
@@ -20,7 +20,7 @@
 
 		<div class="container">
 			<div>Seleciona a zona de rega:</div>
-			<select id="zona" name="zona" onchange="changeZone()">
+			<select id="zona" name="zona" onchange="loadZoneInfo()">
 				<option value="zona1">Estufa Norte</option>
 				<option value="zona2">Parque Sul</option>
 				<option value="zona3">Campo Verde</option>
@@ -48,7 +48,7 @@
 					<span class="valor" id="battery">85%</span>
 				</div>
 				<span class="label">Agendar próxima rega:</span><br>
-				<input type="datetime-local" id="date" name="dataRega">
+				<input type="datetime-local" id="date" name="dataRega" onchange="checkDate()">
 				<button id="next-rega-btn" onclick="agendarRega()">Agendar Rega</button>
 			</div>
 		</div>

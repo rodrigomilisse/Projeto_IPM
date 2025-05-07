@@ -1,4 +1,4 @@
-function toggleAction() {
+function loadDarkMode() {
 	const root = document.documentElement;
 	const toggle = document.getElementById("toggleSwitch");
 	const isDark = localStorage.getItem("darkmode") === "true";
@@ -18,8 +18,18 @@ function toggleAction() {
 	}
 }
 
+function loadNavIcons() {
+	document.querySelectorAll("svg").forEach(svg => {
+		svg.setAttribute("viewBox", "0 0 24 24");
+	});
+}
+function loadSettings() {
+	loadNavIcons();
+	loadDarkMode();
+}
+
 function toggleChanged() {
 	const toggle = document.getElementById("toggleSwitch");
 	localStorage.setItem("darkmode", toggle.checked);
-	toggleAction();
+	loadDarkMode();
 }

@@ -11,6 +11,10 @@
 
 	--container-border-radius: 8px;
 	--container-shadow: 0 2px 6px rgba(0, 0, 0, 1);
+
+	--positive-color: green;
+	--negative-color: red;
+	--unaveilable-color: #9aa89a;
 }
 
 body {
@@ -44,7 +48,7 @@ button {
 }
 
 #confirmar {
-	background-color: #28a745;
+	background-color: var(--positive-color);
 }
 
 
@@ -55,11 +59,12 @@ button {
 #cancelar,
 #clearConditions,
 #next-rega-btn {
-	background-color: #dc3545;
+	background-color: var(--negative-color);
 }
 
 #next-rega-btn {
-	background-color: #28a745;
+	background-color: var(--unaveilable-color);
+	cursor: not-allowed;
 }
 
 #next-rega-btn:active {
@@ -116,6 +121,7 @@ svg {
 }
 
 footer.menu-inferior {
+
 	background-color: var(--nav-bar-color);
 }
 

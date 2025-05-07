@@ -42,10 +42,7 @@ renderConditions = function () {
 		localStorage.setItem("condicoes", []);
 	}
 }
-window.onload = function () {
-	toggleAction();
-	renderConditions();
-}
+
 function adicionarCondicaoLigar() {
 	const zona = document.getElementById("zona").value;
 	if (zona) {
