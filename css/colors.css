@@ -294,7 +294,6 @@ input:checked+.slider:before {
 /* When the checkbox is checked */
 input:checked+.slider {
 	background-color: #4CAF50;
-	/* Apple green color */
 }
 
 /* Move the circle to the right when checked */
@@ -317,16 +316,4 @@ input:checked+.slider:before {
 .rega-item {
     border-radius: 10px;
     padding: 15px;
-}
-
-.cancelar-btn {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    font-size: 16px;
-    border-radius: 8px;
-}
-
-body[data-theme="dark"] .valor {
-    color: white;
 }
