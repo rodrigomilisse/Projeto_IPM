@@ -49,9 +49,9 @@ function loadZoneInfo() {
 	dataPoints.forEach(d => {
 		document.getElementById(d).innerText = info[d];
 
-		if (localStorage.getItem("darkmode")) { // color workaround
+/* 		if (localStorage.getItem("darkmode")) { // color workaround
 			document.getElementById(d).style.color = "white";
-		}
+		} */
 	});
 
 	const botao = document.getElementById("status");
