@@ -1,4 +1,4 @@
-const active = "Ativo";
+const active = "Ativado";
 const deactivated = "Desativado";
 
 let zoneInfo = {
