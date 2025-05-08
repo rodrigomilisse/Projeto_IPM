@@ -38,7 +38,7 @@ function mainLoad() {
 	// Se existir pelo menos uma rega para mostrar
 	if (regasMostrar.length > 0) {
 		// Para cada rega criar os elementos necessários
-		regasMostrar.forEach((rega) => {
+		regasMostrar.forEach((rega, index) => {
 			const div = document.createElement("div");
 			div.classList.add("linha-zona");
 
@@ -51,8 +51,20 @@ function mainLoad() {
 			rega.data = formatarData(rega.data);
 			data.textContent = `${rega.data}`;
 
+
+			// Botão de cancelamento
+			const cancelButton = document.createElement("button");
+			cancelButton.textContent = "Cancelar";
+			cancelButton.classList.add("cancelar-btn");
+			cancelButton.style.backgroundColor = "red"; // color workaround
+			cancelButton.addEventListener("click", () => {
+				console.log("clicked");
+				cancelarRega(index); // Cancelar rega ao clicar
+			});
+
 			div.appendChild(nome);
 			div.appendChild(data);
+			div.appendChild(cancelButton);
 
 			regasContainer.appendChild(div);
 		});
@@ -64,4 +76,18 @@ function mainLoad() {
 	}
 };
 
+function cancelarRega(index) {
+	const regas = JSON.parse(localStorage.getItem("regasAgendadas")) || [];
+
+	// Remover a rega do array
+	regas.splice(index, 1);
+
+	// Atualizar o localStorage
+	localStorage.setItem("regasAgendadas", JSON.stringify(regas));
+
+	// Atualizar a página
+	//mainLoad();
+
+	location.reload();
+}
 
