@@ -50,8 +50,6 @@ button {
 }
 
 .cancelar-btn {
-	appearance: none !important;
-	all: unset !important;
 	background-color: #e74c3c;
 	color: white;
 	border: none;
