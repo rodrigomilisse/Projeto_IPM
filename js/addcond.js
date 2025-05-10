@@ -7,27 +7,18 @@ function confirmarCond() {
 	const condicaoComparacao = document.getElementById("size-cond").value;
 
 	let valor = null;
-	let luminosidade = null;
 
 	switch (tipoCondicao) {
 		case "temp":
 			valor = document.getElementById("numeroTemp").value;
-			if (!valor) {
-				alert("Por favor insira um valor válido no campo.");
-				return;
-			} ("success");
 			break;
 
 		case "hum":
 			valor = document.getElementById("numeroHum").value;
-			if (!valor) {
-				alert("Por favor insira um valor válido no campo.");
-				return;
-			}
 			break;
 
 		case "lum":
-			luminosidade = document.getElementById("luminosidade").value;
+			valor = document.getElementById("luminosidade").value;
 			break;
 	}
 
@@ -36,12 +27,14 @@ function confirmarCond() {
 		tipoAcao,
 		tipoCondicao,
 		condicaoComparacao,
-		valor,
-		luminosidade
+		valor
 	};
+
+	if (checkCondition(dadosCondicao) == "failed") {
+		return;
+	}
 	const condicoes = JSON.parse(localStorage.getItem("condicoes") || "[]");
 
-	console.log("success");
 	condicoes.push(dadosCondicao);
 	localStorage.setItem("condicoes", JSON.stringify(condicoes));
 	alert("Condição Adicionada com sucesso!");
@@ -70,4 +63,34 @@ function changeConditionType() {
 	} else if (tipoCondicao === "lum") {
 		luminosidadeContainer.style.display = "inline-block";
 	}
+}
+
+function checkCondition(dadosCondicao) {
+	console.log("checkin");
+	if (!dadosCondicao.valor) {
+		alert("Por favor insira um valor válido no campo.");
+		return "failed";
+	}
+	const condicoes = JSON.parse(localStorage.getItem("condicoes") || "[]");
+	let check = "passed";
+	condicoes.forEach(condicao => {
+		if (condicao.zona !== dadosCondicao.zona) {
+			return;
+		}
+		if (condicao.tipoCondicao !== dadosCondicao.tipoCondicao) {
+			return;
+		}
+
+		if (condicao.condicaoComparacao !== dadosCondicao.condicaoComparacao) {
+			return;
+		}
+		if (condicao.tipoAcao !== dadosCondicao.tipoAcao) {
+			return;
+		}
+		//TODO MAIS LOGICA POR ADICIONAR
+		alert("Não pode escolher condições redudantes");
+		check = "failed";
+	});
+
+	return check;
 }

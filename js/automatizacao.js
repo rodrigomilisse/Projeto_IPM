@@ -21,7 +21,7 @@ renderConditions = function () {
 				} else if (dadosCondicao.tipoCondicao === "hum") {
 					condicaoTexto += `Humidade ${dadosCondicao.condicaoComparacao} ${dadosCondicao.valor}%<br>`;
 				} else if (dadosCondicao.tipoCondicao === "lum") {
-					condicaoTexto += `Luminosidade ${dadosCondicao.condicaoComparacao} ${dadosCondicao.luminosidade}<br>`;
+					condicaoTexto += `Luminosidade ${dadosCondicao.condicaoComparacao} ${dadosCondicao.valor}<br>`;
 				}
 
 				const div = document.createElement("div");
