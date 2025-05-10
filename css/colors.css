@@ -100,7 +100,6 @@ button {
 	box-shadow: var(--container-shadow);
 	display: inline-block;
 	padding: 5vw;
-	margin: 2vh;
 }
 
 .container * {
@@ -302,18 +301,18 @@ input:checked+.slider:before {
 }
 
 .regas-container {
-    width: 100%;
-    padding: 2vw;
+	width: 100%;
+	padding: 2vw;
 	margin: 0 auto;
 }
 
 .regas-agendadas {
-    display: grid;
-    gap: 20px; 
-    padding: 10px;
+	display: grid;
+	gap: 20px;
+	padding: 10px;
 }
 
 .rega-item {
-    border-radius: 10px;
-    padding: 15px;
+	border-radius: 10px;
+	padding: 15px;
 }

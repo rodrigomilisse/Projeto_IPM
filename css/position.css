@@ -27,8 +27,8 @@ button {
 
 .container {
 	width: 85%;
-	max-width: 500px;
-	padding: 5vw;
+	max-width: 600px;
+	margin: 1vh 0vw;
 }
 
 .regas-agendadas {
@@ -42,12 +42,10 @@ button {
 	flex-direction: column;
 	width: 100%;
 	left: 100px;
-	padding-left: 0;
-
 }
 
-.report-container a p {
-	padding: 5%;
+.report-container * {
+	padding: 0;
 }
 
 h1 {
@@ -106,6 +104,7 @@ footer svg {
 	display: flex;
 	flex-direction: column;
 	margin-top: 20px;
+	width: 100%;
 }
 
 .dado {
@@ -114,6 +113,8 @@ footer svg {
 	align-items: center;
 	margin-bottom: 15px;
 }
+
+
 
 .ligar-container,
 .desligar-container,
