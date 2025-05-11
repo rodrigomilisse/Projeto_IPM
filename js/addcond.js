@@ -66,31 +66,68 @@ function changeConditionType() {
 }
 
 function checkCondition(dadosCondicao) {
+	const MIN_HUMIDADE = 0;
+	const MAX_HUMIDADE = 100;
+	const MIN_TEMP = -25;
+	const MAX_TEMP = 75;
 	console.log("checkin");
 	if (!dadosCondicao.valor) {
 		alert("Por favor insira um valor válido no campo.");
 		return "failed";
 	}
-	const condicoes = JSON.parse(localStorage.getItem("condicoes") || "[]");
+	if (dadosCondicao.tipoCondicao === "hum"
+		&& dadosCondicao.valor < MIN_HUMIDADE || dadosCondicao.valor > MAX_HUMIDADE) {
+		alert("Escolha uma humidade entre " + MIN_HUMIDADE + "% e " + MAX_HUMIDADE + "%");
+		return "failed";
+	}
+
+	if (dadosCondicao.tipoCondicao === "temp"
+		&& dadosCondicao.valor < MIN_TEMP || dadosCondicao > MAX_TEMP) {
+		alert("Escolha uma temperatura entre " + MIN_TEMP + "ºC e " + MAX_TEMP + "ºC");
+		return "failed";
+	}
+
 	let check = "passed";
+	const condicoes = JSON.parse(localStorage.getItem("condicoes") || "[]");
 	condicoes.forEach(condicao => {
-		if (condicao.zona !== dadosCondicao.zona) {
+		if (condicao.zona !== dadosCondicao.zona
+			|| condicao.tipoCondicao !== dadosCondicao.tipoCondicao) {
 			return;
 		}
-		if (condicao.tipoCondicao !== dadosCondicao.tipoCondicao) {
+		console.log(1);
+		if (condicao.tipoAcao !== dadosCondicao.tipoAcao
+			&& condicao.condicaoComparacao === dadosCondicao.condicaoComparacao) {
 			return;
+		}
+		console.log(2);
+		let maior, menor;
+		if (condicao.condicaoComparacao === "maior que") {
+			maior = condicao;
+			menor = dadosCondicao;
+		} else {
+			maior = dadosCondicao;
+			menor = condicao;
 		}
 
-		if (condicao.condicaoComparacao !== dadosCondicao.condicaoComparacao) {
+		maiorValor = maior.valor;
+		menorValor = menor.valor;
+
+		[maiorValor, menorValor] = [maior.valor, menor.valor].map(v => {
+			switch (v) {
+				case "baixa": return 1;
+				case "media": return 2;
+				case "alta": return 3;
+			}
+		});
+
+		if (parseInt(maiorValor) >= parseInt(menorValor)) {
+			console.log(3);
 			return;
 		}
-		if (condicao.tipoAcao !== dadosCondicao.tipoAcao) {
-			return;
-		}
-		//TODO MAIS LOGICA POR ADICIONAR
-		alert("Não pode escolher condições redudantes");
+		console.log(maior, maiorValor, menor, menorValor);
+
+		alert("Não pode escolher condições redudantes nem conflituosas");
 		check = "failed";
 	});
-
 	return check;
 }
