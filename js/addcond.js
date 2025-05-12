@@ -117,11 +117,12 @@ function checkCondition(dadosCondicao) {
 				case "baixa": return 1;
 				case "media": return 2;
 				case "alta": return 3;
+				default: return v;
+
 			}
 		});
 
-		if (parseInt(maiorValor) >= parseInt(menorValor)) {
-			console.log(3);
+		if (maiorValor >= menorValor) {
 			return;
 		}
 		console.log(maior, maiorValor, menor, menorValor);
