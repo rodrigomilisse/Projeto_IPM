@@ -114,7 +114,10 @@ footer svg {
 	margin-bottom: 15px;
 }
 
-
+.setabaixo {
+	display : flex-end;
+	justify-content: center;
+}
 
 .ligar-container,
 .desligar-container,
